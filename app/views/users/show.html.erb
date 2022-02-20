@@ -1,0 +1,12 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @user.first_name %> <%= @user.last_name %></h1>
+  <p class="lead"><%= @user.email %> | <%= @user.phone %> | <%= @user.twitter%></p>
+  <hr class="my-4">
+  <p class="lead">
+    <%= link_to "Back to users", users_path, class:"btn btn-secondary" %>
+    <%= link_to "Edit this user", edit_user_path(@user), class:"btn btn-warning" %>
+    <br></br>
+    <%= button_to "Destroy this user", @user, method: :delete, form: { data: { turbo_confirm: "Are you sure?" }}, class:"btn btn-danger"%>
+    </p>
+</div>
+
